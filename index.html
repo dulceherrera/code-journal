@@ -14,12 +14,52 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-  </header>
+  <div class="row head-container column-full-header">
+    <header>
+      Code Journal
+    </header>
+  </div>
   <main>
+    <div class="row main-container">
+      <form action="" method="get" class="form">
+        <div class="row newentry column-full">
+          <h3>New Entry</h3>
+        </div>
+        <div class="row width">
+          <div class="column-half img">
+            <img src="./images/placeholder-image-square.jpg" alt="newimage">
+          </div>
+          <div class="column-half">
+            <div class="row title input-title">
+              <label for="title" class="line-height">Title</label>
+            </div>
+            <div class="row input-title border-color">
+              <input type="text" name="title" id="title">
+            </div>
+            <div class="row photo-url-text">
+              <label for="photo-url" class="input-title">Photo URL</label>
+            </div>
+            <div class="row input-photo-url border-color">
+              <input type="url" name="photo-url" id="photo-url">
+            </div>
+          </div>
+        </div>
+        <div class="row notes-input">
+          <label for="notes">Notes</label>
+        </div>
+        <div class="row input-notes border-color">
+          <textarea name="notes" id="notes"></textarea>
+        </div>
+        <input type="button" value="SAVE">
+      </form>
+    </div>
   </main>
+
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
