@@ -28,13 +28,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="row background-header height-header align-header">
-    <div class="column-full">
-      <header>
-        Code Journal
-      </header>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="column-full">
+          <h2 class="header">
+            Code Journal
+          </h2>
+        </div>
+      </div>
     </div>
-  </div>
+  </header>
   <main>
     <div class="container" data-view="entry-form">
       <div class="row">
@@ -48,7 +52,7 @@
             <div class="column-half height-img margin-img">
               <img src="./images/placeholder-image-square.jpg" alt="newimage" id="img-entry">
             </div>
-            <div class="column-half margin">
+            <div class="column-half">
               <div class="label">
                 <label for="title" class="input-title">Title</label>
               </div>
@@ -63,10 +67,10 @@
               </div>
             </div>
           </div>
-          <div class="row notes-input">
+          <div class="row">
             <label for="notes" class="notes-text">Notes</label>
           </div>
-          <div class="row input-notes border-color">
+          <div class="row">
             <div class="column-full">
               <textarea name="notes" id="notes" required rows="20"></textarea>
             </div>

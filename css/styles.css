@@ -3,18 +3,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.background-header {
-  background-color: #552b81;
-}
-
-.height-header {
-  height: 3rem;
-}
-
-.align-header {
-  align-items: center;
-}
-
 .height-img {
   height: 200px;
 }
@@ -31,8 +19,8 @@ img {
 }
 
 h2 {
-  background-color: #562b80;
   color: white;
+  font-weight: 300;
 }
 
 h1 {
@@ -47,9 +35,10 @@ label {
 header {
   justify-content: center;
   color: white;
-  padding-left: 1rem;
   letter-spacing: 0.03rem;
-  font-size: 1.2rem;
+  width: 100%;
+  background-color: #562b80;
+  height: 4rem;
 }
 
 input[type="text"] {
@@ -131,7 +120,7 @@ button {
   }
 
   header {
-    width: 850px;
+    max-width: 100%;
     margin: auto;
   }
 }
