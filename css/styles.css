@@ -1,0 +1,130 @@
+body {
+  background-color: #f0f0f0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.height-img {
+  height: 200px;
+}
+
+.margin-img {
+  margin-bottom: 1rem;
+}
+
+img {
+  width: 98%;
+  height: 100%;
+  justify-content: center;
+  object-fit: cover;
+}
+
+h2 {
+  color: white;
+  font-weight: 300;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+header {
+  justify-content: center;
+  color: white;
+  letter-spacing: 0.03rem;
+  width: 100%;
+  background-color: #562b80;
+  height: 4rem;
+}
+
+textarea {
+  width: 22rem;
+  height: 6rem;
+  border-color: #d4d4d4;
+  border: solid;
+  border-width: 0.1px;
+  border-radius: 0.3rem;
+  margin-top: 1rem;
+  font-family: "Open sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+input[type="text"],
+input[type="url"] {
+  width: 22rem;
+  height: 2rem;
+  border-color: #d4d4d4;
+  border: solid;
+  border-width: 0.1px;
+  border-radius: 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+input {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #562b80;
+  border-radius: 5px;
+  color: white;
+  height: 2rem;
+  width: 4rem;
+  border-style: none;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  font-size: 1.05rem;
+}
+
+.justify-button {
+  justify-content: right;
+}
+
+@media screen and (min-width: 768px) {
+  input[type="text"], {
+    width: 100%;
+  }
+
+  input [type="url"] {
+    width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+    height: 4rem;
+    border-color: #d4d4d4;
+    border: solid;
+    border-width: 0.1px;
+    border-radius: 0.3rem;
+    padding-left: 1rem;
+    font-family: "Open sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .notes-text {
+    padding-left: 1rem;
+  }
+
+  .height-img {
+    height: 130%;
+  }
+
+  header {
+    max-width: 100%;
+    margin: auto;
+  }
+}
