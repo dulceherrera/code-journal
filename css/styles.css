@@ -107,25 +107,15 @@ button {
   justify-content: right;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   input[type="text"], {
     width: 100%;
   }
-}
 
-@media screen and (min-width: 750px) {
   input [type="url"] {
     width: 100%;
   }
-}
 
-@media screen and (min-width: 750px) {
-  .row > .column-half {
-    width: 50%;
-  }
-}
-
-@media screen and (min-width: 750px) {
   textarea {
     width: 100%;
     height: 4rem;
@@ -135,30 +125,22 @@ button {
     border-radius: 0.3rem;
     padding-left: 1rem;
   }
-}
 
-@media screen and (min-width: 750px) {
   img {
     width: 100%;
     height: 100%;
   }
-}
 
-@media screen and (min-width: 750px) {
   .notes-text {
     padding-left: 1rem;
   }
-}
 
-@media screen and (min-width: 750px) {
   .containerimg {
     height: 100%;
   }
-}
 
-@media screen and (min-width: 750px) {
   header {
-    width: 800px;
+    width: 850px;
     margin: auto;
   }
 }
