@@ -28,46 +28,54 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="row background-header height-header align-header column-full">
-    <header>
-      Code Journal
-    </header>
+  <div class="row background-header height-header align-header">
+    <div class="column-full">
+      <header>
+        Code Journal
+      </header>
+    </div>
   </div>
   <main>
-    <div class="row container" data-view="entry-form">
-      <form action="" method="get" class="form">
-        <div class="row newentry column-full">
-          <h1>New Entry</h1>
-        </div>
-        <div class="row">
-          <div class="column-half height-img margin-img">
-            <img src="./images/placeholder-image-square.jpg" alt="newimage" id="img-entry">
-          </div>
-          <div class="column-half margin">
-            <div class="label">
-              <label for="title" class="input-title">Title</label>
-            </div>
-            <div class="input-div">
-              <input type="text" name="title" id="title" required>
-            </div>
-            <div class="label">
-              <label for="photourl" class="input-title">Photo URL</label>
-            </div>
-            <div class="input-div">
-              <input type="url" name="photo-url" id="photourl" required>
+    <div class="container" data-view="entry-form">
+      <div class="row">
+        <form action="" method="get" class="form">
+          <div class="row newentry">
+            <div class="column-full">
+              <h1>New Entry</h1>
             </div>
           </div>
-        </div>
-        <div class="row notes-input">
-          <label for="notes" class="notes-text">Notes</label>
-        </div>
-        <div class="row input-notes border-color column-full">
-          <textarea name="notes" id="notes" required rows="20"></textarea>
-        </div>
-        <div class="row justify-button">
-          <button type="submit" class="save-entry">SAVE</button>
-        </div>
-      </form>
+          <div class="row">
+            <div class="column-half height-img margin-img">
+              <img src="./images/placeholder-image-square.jpg" alt="newimage" id="img-entry">
+            </div>
+            <div class="column-half margin">
+              <div class="label">
+                <label for="title" class="input-title">Title</label>
+              </div>
+              <div class="input-div">
+                <input type="text" name="title" id="title" required>
+              </div>
+              <div class="label">
+                <label for="photourl" class="input-title">Photo URL</label>
+              </div>
+              <div class="input-div">
+                <input type="url" name="photo-url" id="photourl" required>
+              </div>
+            </div>
+          </div>
+          <div class="row notes-input">
+            <label for="notes" class="notes-text">Notes</label>
+          </div>
+          <div class="row input-notes border-color">
+            <div class="column-full">
+              <textarea name="notes" id="notes" required rows="20"></textarea>
+            </div>
+          </div>
+          <div class="row justify-button">
+            <button type="submit" class="save-entry">SAVE</button>
+          </div>
+        </form>
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>
