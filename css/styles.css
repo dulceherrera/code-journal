@@ -41,11 +41,6 @@ header {
   height: 4rem;
 }
 
-input[type="text"] {
-  width: 100%;
-  height: 50%;
-}
-
 textarea {
   width: 22rem;
   height: 6rem;
@@ -110,6 +105,9 @@ button {
     border-width: 0.1px;
     border-radius: 0.3rem;
     padding-left: 1rem;
+    font-family: "Open sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
   }
 
   img {
