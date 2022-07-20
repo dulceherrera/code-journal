@@ -26,3 +26,41 @@ $form.addEventListener('submit', function (event) {
   $form.reset();
 
 });
+
+function createList(data) {
+  var $li = document.createElement('li');
+  $li.setAttribute('class', 'row');
+
+  var $imgElement = document.createElement('img');
+  $imgElement.setAttribute('class', 'column-half');
+  $imgElement.setAttribute('src', data.photo);
+
+  $li.appendChild($imgElement);
+
+  var $div = document.createElement('div');
+  $div.setAttribute('class', 'column-half');
+
+  $li.appendChild($div);
+
+  var $h1 = document.createElement('h1');
+  $h1.textContent = data.title;
+
+  $div.appendChild($h1);
+
+  var $p = document.createElement('p');
+  $p.textContent = data.notes;
+
+  $div.appendChild($p);
+
+  return $li;
+
+}
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  var $ul = document.createElement('ul');
+  for (var i = 0; i < data.entries.length; i++) {
+    var result = createList(data.entries[i]);
+    $ul.appendChild(result);
+  }
+}
+);

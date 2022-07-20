@@ -82,6 +82,7 @@ button {
   margin-top: 2rem;
   margin-right: 1rem;
   font-size: 1.05rem;
+  margin-bottom: 1rem;
 }
 
 .justify-button {
@@ -127,4 +128,8 @@ button {
     max-width: 100%;
     margin: auto;
   }
+}
+
+.space-between {
+  justify-content: space-between;
 }
