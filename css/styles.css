@@ -89,6 +89,11 @@ button {
   justify-content: right;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 @media screen and (min-width: 768px) {
   input[type="text"], {
     width: 100%;

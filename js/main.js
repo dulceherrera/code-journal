@@ -56,7 +56,7 @@ function createList(data) {
 
 }
 
-document.addEventListener('DOMContentLoaded', function (event) {
+window.addEventListener('DOMContentLoaded', function (event) {
   var $ul = document.createElement('ul');
   for (var i = 0; i < data.entries.length; i++) {
     var result = createList(data.entries[i]);
