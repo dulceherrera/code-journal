@@ -11,6 +11,7 @@ $form.addEventListener('input', function (event) {
 });
 
 $form.addEventListener('submit', function (event) {
+  event.preventDefault();
   var newObj = {
     title: $title.value,
     photo: $photoUrl.value,
@@ -18,10 +19,10 @@ $form.addEventListener('submit', function (event) {
   };
 
   newObj.entryId = data.nextEntryId;
-  data.nextEntryId++;
   data.entries.push(newObj);
-
-  localStorage.setItem();
-  $img.setAttribute('src', './images/placeholder - image - square.jpg');
+  data.nextEntryId++;
+  data.entries.unshift(newObj);
+  $img.setAttribute('src', './images/placeholder-image-square.jpg');
   $form.reset();
+
 });
