@@ -72,6 +72,16 @@ window.addEventListener('DOMContentLoaded', function (event) {
     var result = createList(data.entries[i]);
     $ul.appendChild(result);
   }
+
+  if (data.view === 'entry-form') {
+    $entries.className = 'view entries hidden';
+    $entryForm.className = 'view entry-form container';
+    data.view = 'entry-form';
+  } else {
+    $entries.className = 'view entries container';
+    $entryForm.className = 'view entry-form hidden container';
+    data.view = 'entries';
+  }
 });
 
 var $buttonNew = document.querySelector('.button-new');
@@ -107,13 +117,3 @@ $formTab.addEventListener('click', function (event) {
   data.view = 'entry-form';
 }
 );
-
-if (data.view === 'entry-form') {
-  $entries.className = 'view entries hidden';
-  $entryForm.className = 'view entry-form container';
-  data.view = 'entry-form';
-} else {
-  $entries.className = 'view entries container';
-  $entryForm.className = 'view entry-form hidden container';
-  data.view = 'entries';
-}
