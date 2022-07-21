@@ -32,6 +32,11 @@ label {
   font-size: 1.2rem;
 }
 
+p {
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
 header {
   justify-content: center;
   color: white;
@@ -82,10 +87,34 @@ button {
   margin-top: 2rem;
   margin-right: 1rem;
   font-size: 1.05rem;
+  margin-bottom: 1rem;
 }
 
 .justify-button {
   justify-content: right;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.entry-tab {
+  padding-top: 1.6rem;
+  padding-left: 1rem;
+}
+
+input[type="button"] {
+  background-color: #562b80;
+  border-radius: 5px;
+  color: white;
+  height: 2rem;
+  width: 4rem;
+  border-style: none;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -113,6 +142,13 @@ button {
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+  }
+
+  li > img {
+    border-radius: 1rem;
   }
 
   .notes-text {
@@ -127,4 +163,26 @@ button {
     max-width: 100%;
     margin: auto;
   }
+
+  .title-entries {
+    padding-left: 1rem;
+  }
+
+  .column-half > h1 {
+    margin-top: 0;
+  }
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+ul {
+  padding: 0;
+}
+
+.no-entries {
+  font-size: 20px;
+  justify-content: center;
+  font-weight: 200;
 }

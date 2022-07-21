@@ -30,17 +30,20 @@
 <body>
   <header>
     <div class="container">
-      <div class="row">
-        <div class="column-full">
-          <h2 class="header">
-            Code Journal
-          </h2>
+      <div class="column-full">
+        <div class="row">
+          <div data-view="entry-form" class="form-tab">
+            <h2 class="header">Code Journal</h2>
+          </div>
+          <div data-view="entries" class="entry-tab">
+            <a href="#">Entries</a>
+          </div>
         </div>
       </div>
     </div>
   </header>
   <main>
-    <div class="container" data-view="entry-form">
+    <div class="container entry-form" data-view="entry-form">
       <div class="row">
         <form action="" method="get" class="form">
           <div class="row newentry">
@@ -79,6 +82,18 @@
             <button type="submit" class="save-entry">SAVE</button>
           </div>
         </form>
+      </div>
+    </div>
+    <div class="view entries container" data-view="entries" >
+      <div class="row space-between">
+        <h1 class="title-entries">Entries</h1>
+        <button class="button-new" data-view="entry-form">NEW</button>
+      </div>
+      <div class="entry-list">
+        <ul></ul>
+        <div class="no-entries row">
+          <p>No entries have been recorded</p>
+        </div>
       </div>
     </div>
   </main>
