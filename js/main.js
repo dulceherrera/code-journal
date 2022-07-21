@@ -81,38 +81,32 @@ var $entryForm = document.querySelector('.entry-form');
 var $formTab = document.querySelector('.form-tab');
 
 $buttonNew.addEventListener('click', function (event) {
-  if ($entryForm !== '') {
-    $entries.className = 'entries hidden';
-    $entryForm.className = 'entry-form container';
-    data.view = 'entry-form';
-  }
-});
+  $entries.className = 'entries hidden';
+  $entryForm.className = 'entry-form container';
+  data.view = 'entry-form';
+}
+);
 
 $entryTab.addEventListener('click', function (event) {
-  if ($entryForm !== '') {
-    $entries.className = 'entries hidden container';
-    $entryForm.className = 'entry-form container';
-    data.view = 'entry-form';
-  }
-});
+  $entries.className = 'entries hidden container';
+  $entryForm.className = 'entry-form container';
+  data.view = 'entry-form';
+}
+);
 
 $entryTab.addEventListener('click', function (event) {
-  if ($entries !== '') {
-    $entryForm.className = 'entry-form hidden';
-    $entries.className = 'entries container';
-    data.view = 'entries';
-  } else {
-    return 'No entries have been recorded';
-  }
-});
+  $entryForm.className = 'entry-form hidden';
+  $entries.className = 'entries container';
+  data.view = 'entries';
+}
+);
 
 $formTab.addEventListener('click', function (event) {
-  if ($entryForm !== '') {
-    $entries.className = 'entries hidden';
-    $entryForm.className = 'entry-form container';
-    data.view = 'entry-form';
-  }
-});
+  $entries.className = 'entries hidden';
+  $entryForm.className = 'entry-form container';
+  data.view = 'entry-form';
+}
+);
 
 if (data.view === 'entry-form') {
   $entries.className = 'view entries hidden';
