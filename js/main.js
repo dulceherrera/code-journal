@@ -17,10 +17,10 @@ $form.addEventListener('submit', function (event) {
     newObj = {
       title: $title.value,
       photo: $photoUrl.value,
-      notes: $notes.value,
-      entryId: data.nextEntryId
+      notes: $notes.value
     };
 
+    newObj.entryId = data.nextEntryId;
     data.nextEntryId++;
     data.entries.unshift(newObj);
     $img.setAttribute('src', './images/placeholder-image-square.jpg');
@@ -90,7 +90,7 @@ function createList(data) {
 }
 var $ulElement = document.querySelector('ul');
 
-document.addEventListener('DOMContentLoaded', function (event) {
+window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     var result = createList(data.entries[i]);
     $ulElement.appendChild(result);
@@ -121,9 +121,9 @@ $buttonNew.addEventListener('click', function (event) {
 );
 
 $entryTab.addEventListener('click', function (event) {
-  $entries.className = 'entries  container';
+  $entries.className = 'entries container';
   $entryForm.className = 'entry-form hidden container';
-  data.view = 'entries';
+  data.view = 'entry';
 }
 );
 
@@ -139,7 +139,7 @@ var $liClosest = null;
 $ulElement.addEventListener('click', function (event) {
   var $h1Element = document.querySelector('h1');
 
-  if (event.target && event.target.matches('I')) {
+  if (event.target && event.target.matches('i')) {
     $liClosest = event.target.closest('li');
     var $entryId = $liClosest.getAttribute('data-entry-id');
     $entryId = JSON.parse($entryId);
