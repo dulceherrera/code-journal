@@ -161,3 +161,13 @@ $ulElement.addEventListener('click', function (event) {
     data.view = 'entry-form';
   }
 });
+
+var $deleteButton = document.querySelector('.delete-button');
+
+$entries.addEventListener('click', function (event) {
+  if (event.target.matches('i')) {
+    $deleteButton.className = 'delete-button';
+  } else {
+    $deleteButton.className = 'delete-button visibility-hidden';
+  }
+});
