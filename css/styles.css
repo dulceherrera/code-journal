@@ -77,7 +77,8 @@ input {
   margin-bottom: 1rem;
 }
 
-button {
+.button-new,
+.button-save {
   background-color: #562b80;
   border-radius: 5px;
   color: white;
@@ -102,19 +103,6 @@ a {
 .entry-tab {
   padding-top: 1.6rem;
   padding-left: 1rem;
-}
-
-input[type="button"] {
-  background-color: #562b80;
-  border-radius: 5px;
-  color: white;
-  height: 2rem;
-  width: 4rem;
-  border-style: none;
-  margin-top: 2rem;
-  margin-right: 1rem;
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
 }
 
 .edit-icon {
@@ -209,6 +197,54 @@ ul {
   font-weight: 200;
 }
 
-.visibility-hidden {
-  visibility: hidden;
+.delete-button {
+  text-decoration: underline;
+  border: none;
+  color: red;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.confirm {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 350px;
+  height: 150px;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.cancel-button {
+  border-radius: 6px;
+  height: 2rem;
+  width: 5rem;
+  background-color: grey;
+  color: black;
+  border: none;
+  margin-left: 1rem;
+}
+
+.confirm-button {
+  background-color: red;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  margin-right: 1rem;
+}
+
+.confirm-text {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
 }

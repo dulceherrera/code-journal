@@ -4,6 +4,7 @@ var $img = document.querySelector('#img-entry');
 var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $ul = document.querySelector('ul');
+
 function updateImg(event) {
   $img.setAttribute('src', $photoUrl.value);
 }
@@ -17,10 +18,10 @@ $form.addEventListener('submit', function (event) {
     newObj = {
       title: $title.value,
       photo: $photoUrl.value,
-      notes: $notes.value
+      notes: $notes.value,
+      entryId: data.nextEntryId
     };
 
-    newObj.entryId = data.nextEntryId;
     data.nextEntryId++;
     data.entries.unshift(newObj);
     $img.setAttribute('src', './images/placeholder-image-square.jpg');
@@ -38,9 +39,16 @@ $form.addEventListener('submit', function (event) {
       }
     }
 
+    var $li = document.querySelectorAll('li');
+    for (i = 0; i < $li.length; i++) {
+      var $liId = JSON.parse($li[i].getAttribute('data-entry-id'));
+      if ($liId === data.editing.entryId) {
+        $li[i].replaceWith(createList(newObj));
+      }
+    }
+
     data.editing = null;
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-    $liClosest.replaceWith(createList(newObj));
     $form.reset();
   }
 
@@ -50,14 +58,14 @@ $form.addEventListener('submit', function (event) {
 
 });
 
-function createList(data) {
+function createList(newObj) {
   var $li = document.createElement('li');
   $li.setAttribute('class', 'row');
-  $li.setAttribute('data-entry-id', data.entryId);
+  $li.setAttribute('data-entry-id', newObj.entryId);
 
   var $imgElement = document.createElement('img');
   $imgElement.setAttribute('class', 'column-half');
-  $imgElement.setAttribute('src', data.photo);
+  $imgElement.setAttribute('src', newObj.photo);
 
   $li.appendChild($imgElement);
 
@@ -71,7 +79,7 @@ function createList(data) {
   $div.appendChild($titleDiv);
 
   var $h1 = document.createElement('h1');
-  $h1.textContent = data.title;
+  $h1.textContent = newObj.title;
 
   $titleDiv.appendChild($h1);
 
@@ -81,7 +89,7 @@ function createList(data) {
   $titleDiv.appendChild($editElement);
 
   var $p = document.createElement('p');
-  $p.textContent = data.notes;
+  $p.textContent = newObj.notes;
 
   $div.appendChild($p);
 
@@ -90,7 +98,7 @@ function createList(data) {
 }
 var $ulElement = document.querySelector('ul');
 
-window.addEventListener('DOMContentLoaded', function (event) {
+document.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     var result = createList(data.entries[i]);
     $ulElement.appendChild(result);
@@ -123,7 +131,7 @@ $buttonNew.addEventListener('click', function (event) {
 $entryTab.addEventListener('click', function (event) {
   $entries.className = 'entries container';
   $entryForm.className = 'entry-form hidden container';
-  data.view = 'entry';
+  data.view = 'entries';
 }
 );
 
@@ -134,13 +142,11 @@ $formTab.addEventListener('click', function (event) {
 }
 );
 
-var $liClosest = null;
-
 $ulElement.addEventListener('click', function (event) {
   var $h1Element = document.querySelector('h1');
 
   if (event.target && event.target.matches('i')) {
-    $liClosest = event.target.closest('li');
+    var $liClosest = event.target.closest('li');
     var $entryId = $liClosest.getAttribute('data-entry-id');
     $entryId = JSON.parse($entryId);
 
@@ -165,9 +171,46 @@ $ulElement.addEventListener('click', function (event) {
 var $deleteButton = document.querySelector('.delete-button');
 
 $entries.addEventListener('click', function (event) {
-  if (event.target.matches('i')) {
+  if (event.target.matches('I')) {
     $deleteButton.className = 'delete-button';
   } else {
     $deleteButton.className = 'delete-button visibility-hidden';
   }
 });
+
+var $modal = document.querySelector('#modal');
+$deleteButton.addEventListener('click', function (event) {
+  $modal.className = 'overlay';
+});
+
+var $cancelButton = document.querySelector('.cancel-button');
+$cancelButton.addEventListener('click', function (event) {
+  $modal.className = 'overlay hidden';
+});
+
+var $confirmButton = document.querySelector('.confirm-button');
+
+$confirmButton.addEventListener('click', function (event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === data.editing.entryId) {
+      data.entries.splice(i, 1);
+    }
+  }
+
+  var $li = document.querySelectorAll('li');
+
+  for (i = 0; i < data.entries.length; i++) {
+    var $entryIdJSON = $li[i].getAttribute('data-entry-id');
+    $entryIdJSON = JSON.parse($entryIdJSON);
+    if ($entryIdJSON === data.editing.entryId) {
+      $li[i].remove();
+    }
+  }
+
+  data.editing = null;
+  $entryForm.className = 'view entry-form hidden';
+  $entries.className = 'view entries container';
+  data.view = 'entries';
+  $modal.className = 'overlay hidden ';
+}
+);
